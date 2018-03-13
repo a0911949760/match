@@ -1,196 +1,60 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('註冊表單') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" name="form">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('姓名') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    <!--
-                        <div class="form-group row">
-                            <label for="identitycard" class="col-md-4 col-form-label text-md-right">{{ __('身分證號碼') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="identitycard" type="text" class="form-control{{ $errors->has('identitycard') ? ' is-invalid' : '' }}" name="identitycard" value="{{ old('identitycard') }}" required>
-
-                                @if ($errors->has('identitycard'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('identitycard') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('出生年月日') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="birthday" type="date" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}" name="birthday" value="{{ old('birthday') }}" required>
-
-                                @if ($errors->has('birthday'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('birthday') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('連絡電話') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="phone" type="numeric" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
-
-                                @if ($errors->has('phone'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('phone') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    -->
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子信箱') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    <!--
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('住址') }}</label>
-                            
-                            <div class="col-md-6">
-                                <select name="address1" onChange="Buildkey(this.options[this.options.selectedIndex].value);" value="{{ old('address1') }}" required>
-                                    <option value="">選擇縣市</option>
-                                    <option value="基隆市" >基隆市</option>
-                                    <option value="臺北市" >臺北市</option>
-                                    <option value="新北市" >新北市</option>
-                                    <option value="桃園市" >桃園市</option>
-                                    <option value="新竹市" >新竹市</option>
-                                    <option value="新竹縣" >新竹縣</option>
-                                    <option value="苗栗縣" >苗栗縣</option>
-                                    <option value="臺中市" >臺中市</option>
-                                    <option value="彰化縣" >彰化縣</option>
-                                    <option value="南投縣" >南投縣</option>
-                                    <option value="雲林縣" >雲林縣</option>
-                                    <option value="嘉義市" >嘉義市</option>
-                                    <option value="嘉義縣" >嘉義縣</option>
-                                    <option value="臺南市" >臺南市</option>
-                                    <option value="高雄市" >高雄市</option>
-                                    <option value="屏東縣" >屏東縣</option>
-                                    <option value="臺東縣" >臺東縣</option>
-                                    <option value="花蓮縣" >花蓮縣</option>
-                                    <option value="宜蘭縣" >宜蘭縣</option>
-                                    <option value="澎湖縣" >澎湖縣</option>
-                                    <option value="金門縣" >金門縣</option>
-                                    <option value="連江縣" >連江縣</option>
-                                </select>
-                                <select name="address2" required>
-                                    <option value="">選擇區域</option>
-                                </select>
-                                <input type="text" name="address3" required>
-                            </div>
-                        </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{isset($user) ? url('users') . '/' . $user->id : url('users')}}" method="POST" name="form">
+                <div class="form-group">
+                    {{ csrf_field() }}
+                    @if(isset($user))
+                        {{ method_field('PUT') }}
+                    @endif
+                    <input type="text" name="nama" placeholder="姓名" class="form-control" value="{{ isset($user) ? $user->name : '' }}" required> 
+                <!--    <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
+                    <input type="date" name="birthday" class="form-control" value="{{ isset($user) ? $user->birthday :'' }}" required>   
+                    <input type="phone" name="phone" placeholder="連絡電話" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>    -->                      
+                  
+                    <input type="email" name="email" placeholder="電子信箱" class="form-control" value="{{ isset($user) ? $user->email : '' }}" required>
                     
-                        <div class="form-group row">
-                            <label for="speciality" class="col-md-4 col-form-label text-md-right">{{ __('專長') }}</label>
-
-                            <div class="col-md-6">
-                                <textarea id="speciality" rows="5" cols="51" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" name="speciality" value="{{ old('speciality') }}" required></textarea>
-
-                                @if ($errors->has('speciality'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('speciality') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="experience" class="col-md-4 col-form-label text-md-right">{{ __('經歷與學歷') }}</label>
-
-                            <div class="col-md-6">
-                                <textarea id="experience" rows="5" cols="51" class="form-control{{ $errors->has('experience') ? ' is-invalid' : '' }}" name="experience" value="{{ old('experience') }}" required></textarea>
-
-                                @if ($errors->has('experience'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('experience') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="selfintroduction" class="col-md-4 col-form-label text-md-right">{{ __('自我介紹') }}</label>
-
-                            <div class="col-md-6">
-                                <textarea id="selfintroduction" rows="5" cols="51" class="form-control{{ $errors->has('selfintroduction') ? ' is-invalid' : '' }}" name="selfintroduction" value="{{ old('selfintroduction') }}" required></textarea>
-
-                                @if ($errors->has('selfintroduction'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('selfintroduction') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                <!--
+                    <div class="col-md-6">
+                        <select name="address1" onChange="Buildkey(this.options[this.options.selectedIndex].value);" value="{{ old('address1') }}" required>
+                            <option value="">選擇縣市</option>
+                            <option value="基隆市" >基隆市</option>
+                            <option value="臺北市" >臺北市</option>
+                            <option value="新北市" >新北市</option>
+                            <option value="桃園市" >桃園市</option>
+                            <option value="新竹市" >新竹市</option>
+                            <option value="新竹縣" >新竹縣</option>
+                            <option value="苗栗縣" >苗栗縣</option>
+                            <option value="臺中市" >臺中市</option>
+                            <option value="彰化縣" >彰化縣</option>
+                            <option value="南投縣" >南投縣</option>
+                            <option value="雲林縣" >雲林縣</option>
+                            <option value="嘉義市" >嘉義市</option>
+                            <option value="嘉義縣" >嘉義縣</option>
+                            <option value="臺南市" >臺南市</option>
+                            <option value="高雄市" >高雄市</option>
+                            <option value="屏東縣" >屏東縣</option>
+                            <option value="臺東縣" >臺東縣</option>
+                            <option value="花蓮縣" >花蓮縣</option>
+                            <option value="宜蘭縣" >宜蘭縣</option>
+                            <option value="澎湖縣" >澎湖縣</option>
+                            <option value="金門縣" >金門縣</option>
+                            <option value="連江縣" >連江縣</option>
+                        </select>
+                        <select name="address2" required>
+                            <option value="">選擇區域</option>
+                        </select>
+                        <input type="text" name="address3" required>
+                    </div>
+                    <textarea type="text" name="speciality" placeholder="專長" class="form-control" value="{{ isset($user) ? $user->speciality :'' }}" required></textarea>
+                    <textarea type="text" name="experience" placeholder="經歷與學歷" class="form-control" value="{{ isset($user) ? $user->experience :'' }}" required></textarea>
+                    <textarea type="text" name="selfintroduction" placeholder="自我介紹" class="form-control" value="{{ isset($user) ? $user->selfintroduction :'' }}" required></textarea>
                     -->
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('確認密碼') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('註冊') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                <!--    
-                    <script language="javascript">
+                    <button type="submit" class="btn btn-sm btn-success">confirm</button>
+                </div>
+            </form><!--
+            <script language="javascript">
                     function Buildkey(num) {
                         var ctr=0;
                         document.form.address2.selectedIndex=0;
@@ -591,10 +455,7 @@
                         document.form.address2.length=ctr;
                         document.form.address2.options[0].selected=true;
                     } 
-                    </script>  --> 
-                </div>
-            </div>
+            </script>-->
         </div>
     </div>
-</div>
 @endsection

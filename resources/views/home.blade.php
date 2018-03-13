@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                   <a href="{{ URL('users')}}" class="btn btn-sm btn-primary">NEW Users</a>
                 </div>
             </div>
         </div>
