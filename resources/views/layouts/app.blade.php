@@ -67,5 +67,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery.twzipcode.min.js') }}"></script>
+    <script>
+        $('#twzipcode').twzipcode();
+    </script>
 </body>
 </html>
