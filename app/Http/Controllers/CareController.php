@@ -35,7 +35,7 @@ class CareController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -46,7 +46,7 @@ class CareController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
