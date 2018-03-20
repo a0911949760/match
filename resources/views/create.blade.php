@@ -16,7 +16,7 @@
                     <input type="radio" name="gender" id="genderF"  value="F" >女性
                     <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
                     <input type="date" name="birthday" class="form-control" value="{{ isset($user) ? $user->birthday :'' }}" required> 
-                    <input type="phone" name="phone" placeholder="連絡電話" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>                    
+                    <input type="phone" name="phone" placeholder="手機號碼" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>                    
                     <input type="email" name="email" placeholder="電子信箱" class="form-control" value="{{ isset($user) ? $user->email : '' }}" required>
                     <div class="col-md-6">
                         <select name="address1" onChange="Buildkey(this.options[this.options.selectedIndex].value);" value="{{ old('address1') }}" required>

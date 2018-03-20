@@ -16,7 +16,7 @@
                         <th>性別</th>
                         <th>身分證號碼</th>
                         <th>出生年月日</th>
-                        <th>連絡電話</th>
+                        <th>手機號碼</th>
                         <th>電子信箱</th>
                         <th>Address1</th>
                         <th>Address2</th>
