@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserscareTable extends Migration
+class CreateUserscaresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateUserscareTable extends Migration
      */
     public function up()
     {
-        Schema::create('userscare', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('userscares', function (Blueprint $table) {
+            $table->increments('id');           
             $table->string('name');
             $table->string('twzipcode');
+            $table->string('twzipcode2');
+            $table->string('twzipcode3');
             $table->string('birthday');
             $table->string('phone');
             $table->string('speciality');
             $table->string('experience');
             $table->string('identitycard');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateUserscareTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userscare');
+        Schema::dropIfExists('userscares');
     }
 }
