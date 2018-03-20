@@ -8,14 +8,16 @@
                     @if(isset($user))
                         {{ method_field('PUT') }}
                     @endif
+                    @foreach ($errors->all() as $error)
+                        <font color="red">{{$error}}<br></font>
+                    @endforeach
                     <input type="text" name="nama" placeholder="姓名" class="form-control" value="{{ isset($user) ? $user->name : '' }}" required> 
-                <!--    <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
-                    <input type="date" name="birthday" class="form-control" value="{{ isset($user) ? $user->birthday :'' }}" required>   
-                    <input type="phone" name="phone" placeholder="連絡電話" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>    -->                      
-                  
+                    <input type="radio" name="gender" id="genderM"  value="M" required>男性
+                    <input type="radio" name="gender" id="genderF"  value="F" >女性
+                    <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
+                    <input type="date" name="birthday" class="form-control" value="{{ isset($user) ? $user->birthday :'' }}" required> 
+                    <input type="phone" name="phone" placeholder="連絡電話" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>                    
                     <input type="email" name="email" placeholder="電子信箱" class="form-control" value="{{ isset($user) ? $user->email : '' }}" required>
-                    
-                <!--
                     <div class="col-md-6">
                         <select name="address1" onChange="Buildkey(this.options[this.options.selectedIndex].value);" value="{{ old('address1') }}" required>
                             <option value="">選擇縣市</option>
@@ -45,15 +47,16 @@
                         <select name="address2" required>
                             <option value="">選擇區域</option>
                         </select>
-                        <input type="text" name="address3" required>
+                        <input type="text" name="address3" value="{{ isset($user) ? $user->address3 :'' }}" required>
                     </div>
+                    <input type="radio" name="license" id="licenseY"  value="Y" required>有證照
+                    <input type="radio" name="license" id="licenseN"  value="N" >無證照
                     <textarea type="text" name="speciality" placeholder="專長" class="form-control" value="{{ isset($user) ? $user->speciality :'' }}" required></textarea>
                     <textarea type="text" name="experience" placeholder="經歷與學歷" class="form-control" value="{{ isset($user) ? $user->experience :'' }}" required></textarea>
                     <textarea type="text" name="selfintroduction" placeholder="自我介紹" class="form-control" value="{{ isset($user) ? $user->selfintroduction :'' }}" required></textarea>
-                    -->
                     <button type="submit" class="btn btn-sm btn-success">confirm</button>
                 </div>
-            </form><!--
+            </form>
             <script language="javascript">
                     function Buildkey(num) {
                         var ctr=0;
@@ -455,7 +458,7 @@
                         document.form.address2.length=ctr;
                         document.form.address2.options[0].selected=true;
                     } 
-            </script>-->
+            </script>
         </div>
     </div>
 @endsection

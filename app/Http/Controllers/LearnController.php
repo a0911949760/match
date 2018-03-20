@@ -36,16 +36,25 @@ class LearnController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'identitycard'=>'unique:users,identitycard',
+            'phone'=>'unique:users,phone',
+            'email'=>'unique:users,email'
+        ]);         
         $user = [
             'name' => $request->nama,
-         /*   'identitycard' => $request->identitycard,
+            'gender' => $request->gender,
+            'identitycard' => $request->identitycard,
             'birthday'=>$request->birthday,
-            'phone'=>$request->phone,*/
+            'phone'=>$request->phone,
             'email' => $request->email,
-        /*    'address1'=>$request->address1,
+            'address1'=>$request->address1,
             'address2'=>$request->address2,
             'address3'=>$request->address3,
-            'speciality'=>$request->speciality,*/
+            'license'=>$request->license,
+            'speciality'=>$request->speciality,
+            'experience'=>$request->experience,
+            'selfintroduction'=>$request->selfintroduction,
             'password' => Hash::make($request->nama),
         ];
         $save = User::insert($user);
@@ -91,35 +100,37 @@ class LearnController extends Controller
             $password = $request->password;
             $user = [
                 'name' => $request->nama,
-            /*    'identitycard' => $request->identitycard,
+                'gender' => $request->gender,
+                'identitycard' => $request->identitycard,
                 'birthday'=>$request->birthday,
-                'phone'=>$request->phone,*/
+                'phone'=>$request->phone,
                 'email' => $request->email,
-            /*    'address1'=>$request->address1,
+                'address1'=>$request->address1,
                 'address2'=>$request->address2,
                 'address3'=>$request->address3,
+                'license'=>$request->license,
                 'speciality'=>$request->speciality,
                 'experience'=>$request->experience,
-                'selfintroduction'=>$request->selfintroduction,*/
+                'selfintroduction'=>$request->selfintroduction,
                 'password' => $password,
             ];
         }            
         else{
             $user = [
                 'name' => $request->nama,
-            /*    'identitycard' => $request->identitycard,
+                'gender' => $request->gender,
+                'identitycard' => $request->identitycard,
                 'birthday'=>$request->birthday,
-                'phone'=>$request->phone,*/
+                'phone'=>$request->phone,
                 'email' => $request->email,
-            /*    'address1'=>$request->address1,
+                'address1'=>$request->address1,
                 'address2'=>$request->address2,
                 'address3'=>$request->address3,
+                'license'=>$request->license,
                 'speciality'=>$request->speciality,
                 'experience'=>$request->experience,
-                'selfintroduction'=>$request->selfintroduction,*/
-            ];
-        
-
+                'selfintroduction'=>$request->selfintroduction,
+            ]; 
         $update = User::find($id)->update($user);
         if($update)
             return redirect('users');

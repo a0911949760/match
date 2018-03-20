@@ -49,16 +49,18 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-        /*    'identitycard' => 'required|string|max:255',
+            'gender' => 'required|string|max:255',
+            'identitycard' => 'required|string|max:255|unique:users,identitycard',
             'birthday' => 'required|max:255',
-            'phone' => 'required|string|numeric|min:9|unique:users',*/
-            'email' => 'required|string|email|max:255|unique:users',
-        /*    'address1' => 'required|string|max:255',
+            'phone' => 'required|numeric:min:9|unique:users,phone',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'address1' => 'required|string|max:255',
             'address2' => 'required|string|max:255',
             'address3' => 'required|string|max:255',
+            'license' => 'required|string|max:255',
             'speciality' => 'required|string|max:255',
             'experience' => 'required|string|max:255',
-            'selfintroduction' => 'required|string|max:255',*/
+            'selfintroduction' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -73,16 +75,18 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-        /*    'identitycard' => $data['identitycard'],
+            'gender' => $data['gender'],
+            'identitycard' => $data['identitycard'],
             'birthday' => $data['birthday'],
-            'phone' => $data['phone'],*/
+            'phone' => $data['phone'],
             'email' => $data['email'],
-        /*    'address1' => $data['address1'],
+            'address1' => $data['address1'],
             'address2' => $data['address2'],
             'address3' => $data['address3'],
+            'license' => $data['license'],
             'speciality' => $data['speciality'],
             'experience' => $data['experience'],
-            'selfintroduction' => $data['selfintroduction'],*/
+            'selfintroduction' => $data['selfintroduction'],
             'password' => bcrypt($data['password']),
         ]);
     }
