@@ -24,7 +24,21 @@
                                 @endif
                             </div>
                         </div>
-                    <!--
+
+                        <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('性別') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="genderM" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="M" required>男性
+                                <input id="genderF" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="F" >女性
+                                @if ($errors->has('gender'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    
                         <div class="form-group row">
                             <label for="identitycard" class="col-md-4 col-form-label text-md-right">{{ __('身分證號碼') }}</label>
 
@@ -52,12 +66,12 @@
                                 @endif
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('連絡電話') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="numeric" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+                                <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
 
                                 @if ($errors->has('phone'))
                                     <span class="invalid-feedback">
@@ -66,7 +80,7 @@
                                 @endif
                             </div>
                         </div>
-                    -->
+                        
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子信箱') }}</label>
 
@@ -80,7 +94,7 @@
                                 @endif
                             </div>
                         </div>
-                    <!--
+                        
                         <div class="form-group row">
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('住址') }}</label>
                             
@@ -114,6 +128,20 @@
                                     <option value="">選擇區域</option>
                                 </select>
                                 <input type="text" name="address3" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="license" class="col-md-4 col-form-label text-md-right">{{ __('證照') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="licenseY" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="Y" required>有證照
+                                <input id="licenseN" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="N" >無證照
+                                @if ($errors->has('license'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('license') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     
@@ -158,7 +186,7 @@
                                 @endif
                             </div>
                         </div>
-                    -->
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼') }}</label>
 
@@ -189,7 +217,7 @@
                             </div>
                         </div>
                     </form>
-                <!--    
+                    
                     <script language="javascript">
                     function Buildkey(num) {
                         var ctr=0;
@@ -591,7 +619,7 @@
                         document.form.address2.length=ctr;
                         document.form.address2.options[0].selected=true;
                     } 
-                    </script>  --> 
+                    </script>
                 </div>
             </div>
         </div>
