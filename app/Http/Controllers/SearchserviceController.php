@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CareController extends Controller
+class SearchserviceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,6 @@ class CareController extends Controller
      */
     public function index()
     {
-        //
         dd('index');
     }
 
@@ -24,7 +23,8 @@ class CareController extends Controller
      */
     public function create()
     {
-        return view('care.create');
+        //
+        return view('Searchservice.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class CareController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
@@ -46,7 +46,7 @@ class CareController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
