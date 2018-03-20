@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\userscare;
 
 class CareController extends Controller
 {
@@ -35,7 +36,7 @@ class CareController extends Controller
      */
     public function store(Request $request)
     {
-        
+        userscare::create($request->all());
     }
 
     /**
