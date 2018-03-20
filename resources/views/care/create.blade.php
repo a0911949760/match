@@ -8,7 +8,7 @@
                 <div class="card-header">照護對象資料設定</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('care') }}">
+                    <form method="POST" action="{{ url('/care') }}">
                         @csrf
 
                         <div class="form-group row">
