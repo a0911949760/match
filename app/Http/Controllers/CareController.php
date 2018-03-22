@@ -15,8 +15,12 @@ class CareController extends Controller
     public function index()
     {
         //
-        dd('index');
-    }
+        //dd('index');
+        $articles = userscare::latest()->paginate(5);
+        return view('care.index',compact('articles'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);       
+        
+        }   
 
     /**
      * Show the form for creating a new resource.
