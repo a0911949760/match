@@ -9,7 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -50,14 +51,17 @@
             }
 
             .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
+                color: #1F618D;
+                background-color: #58D68D;
+                padding: 3px 5px 3px 5px;
+                font-size: 20px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                margin-right: 20px;
             }
+            
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -79,12 +83,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                看護媒合平台
+                <i class="fab fa-accessible-icon"></i>看護媒合平台
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('register') }}">看護註冊</a>
-                    <a href="{{ url('/care/create') }}">申請看護</a>
+                    <a href="{{ route('register') }}"><i class="fas fa-users"></i> 看護註冊</a>
+                    <a href="{{ url('/care/create') }}"><i class="fas fa-wheelchair"></i> 申請看護</a>
                 </div>
             </div>
         </div>
