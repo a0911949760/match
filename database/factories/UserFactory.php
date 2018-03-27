@@ -18,8 +18,8 @@ $factory->define(App\Userscare::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'county' => mb_substr($fullCity, 0, 3), // city
-        'district' => mb_substr($fullCity, 3), // region
+        'city' => mb_substr($fullCity, 0, 3), // city
+        'region' => mb_substr($fullCity, 3), // region
         'zipcode' => $faker->postcode,
         'birthday' => $faker->date,
         'phone' => $faker->phoneNumber,

@@ -41,8 +41,8 @@
 
                             <div id="twzipcode"class="form-group row" >
                                 <label for="birthday" class="col-md-4 col-form-label text-md-right">選擇地區</label>
-                                <div data-role="county" data-style="Style Name" data-value="110" data-name="county"></div >
-                                <div data-role="district" data-style="Style Name" data-value="臺北市" data-name="district"></div>
+                                <div data-role="county" data-style="Style Name" data-value="110" data-name="city"></div >
+                                <div data-role="district" data-style="Style Name" data-value="臺北市" data-name="region"></div>
                                 <div data-role="zipcode" data-style="Style Name" data-value="信義區" data-name="zipcode"></div>
                             </div>
 
