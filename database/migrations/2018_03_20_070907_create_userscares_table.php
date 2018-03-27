@@ -16,9 +16,9 @@ class CreateUserscaresTable extends Migration
         Schema::create('userscares', function (Blueprint $table) {
             $table->increments('id');           
             $table->string('name');
-            $table->string('twzipcode');
-            $table->string('twzipcode2');
-            $table->string('twzipcode3');
+            $table->string('county');
+            $table->string('district');
+            $table->string('zipcode');
             $table->string('birthday');
             $table->string('phone');
             $table->string('speciality');

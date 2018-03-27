@@ -37,8 +37,8 @@
         <td>{{ ++$i }}</td>
         <td>{{ $article->name}}</td>
         <td>{{ $article->email}}</td>
-        <td>{{ $article->twzipcode}}</td>
-        <td>{{ $article->twzipcode2}}</td>        
+        <td>{{ $article->county}}</td>
+        <td>{{ $article->district}}</td>        
         <td>{{ $article->birthday}}</td>
         <td>{{ $article->phone}}</td>        
         

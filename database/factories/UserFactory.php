@@ -14,12 +14,13 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\Userscare::class, function (Faker $faker) {
+    $fullCity =  $faker->city;
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'twzipcode' => $faker->state,
-        'twzipcode2' => $faker->state,
-        'twzipcode3' => $faker->state,
+        'county' => mb_substr($fullCity, 0, 3), // city
+        'district' => mb_substr($fullCity, 3), // region
+        'zipcode' => $faker->postcode,
         'birthday' => $faker->date,
         'phone' => $faker->phoneNumber,
         'speciality' => $faker->word,
@@ -35,19 +36,19 @@ $factory->define(App\User::class, function (Faker $faker) {
     return [
       
         'name'=> $faker->name,
-        'gender' =>$faker->phoneNumber,
-        'identitycard'=> $faker->phoneNumber,
-        'phone'=> $faker->phoneNumber,
-        'birthday' =>$faker->phoneNumber,
         'email'=> $faker->unique()->safeEmail,
         'address1' => $faker->state,
-        'address2'=> $faker->state,
-        'address3'=> $faker->state,
-        'license'=>$faker->phoneNumber,
-        'speciality'=>$faker->phoneNumber,
-        'experience'=>$faker->phoneNumber,
-        'selfintroduction'=>$faker->phoneNumber,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',
+        'address2' => $faker->state,
+        'address3' => $faker->state,
+        'phone'=> $faker->phoneNumber,
+        'birthday' =>$faker->date,
+        'identitycard'=> $faker->personalIdentityNumber,
+        'experience'=>$faker->jobTitle,
+        'speciality' => $faker->word,
+        'selfintroduction'=>$faker->word,
+        'gender' =>$faker->boolean,
+        'license'=>$faker->boolean,
+        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',       
         //'remember_token' => str_random(10),
     ];
 });
