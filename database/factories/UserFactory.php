@@ -29,4 +29,25 @@ $factory->define(App\Userscare::class, function (Faker $faker) {
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         //'remember_token' => str_random(10),
     ];
+}); 
+
+$factory->define(App\User::class, function (Faker $faker) {
+    return [
+      
+        'name'=> $faker->name,
+        'gender' =>$faker->phoneNumber,
+        'identitycard'=> $faker->phoneNumber,
+        'phone'=> $faker->phoneNumber,
+        'birthday' =>$faker->phoneNumber,
+        'email'=> $faker->unique()->safeEmail,
+        'address1' => $faker->state,
+        'address2'=> $faker->state,
+        'address3'=> $faker->state,
+        'license'=>$faker->phoneNumber,
+        'speciality'=>$faker->phoneNumber,
+        'experience'=>$faker->phoneNumber,
+        'selfintroduction'=>$faker->phoneNumber,
+        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',
+        //'remember_token' => str_random(10),
+    ];
 });
