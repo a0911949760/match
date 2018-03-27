@@ -215,4 +215,5 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,        
     ],
 
+    'faker_locale' => 'zh_TW',
 ];

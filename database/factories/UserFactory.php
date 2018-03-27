@@ -20,11 +20,11 @@ $factory->define(App\Userscare::class, function (Faker $faker) {
         'twzipcode' => $faker->state,
         'twzipcode2' => $faker->state,
         'twzipcode3' => $faker->state,
-        'birthday' => $faker->phoneNumber,
+        'birthday' => $faker->date,
         'phone' => $faker->phoneNumber,
-        'speciality' => $faker->phoneNumber,
-        'experience' => $faker->phoneNumber,
-        'identitycard' => $faker->phoneNumber,        
+        'speciality' => $faker->word,
+        'experience' => $faker->jobTitle,
+        'identitycard' => $faker->personalIdentityNumber,        
         
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         //'remember_token' => str_random(10),
