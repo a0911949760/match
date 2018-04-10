@@ -41,6 +41,7 @@ class CareController extends Controller
     public function store(Request $request)
     {
         userscare::create($request->all());
+        return redirect()->route('care.index');
     }
 
     /**
