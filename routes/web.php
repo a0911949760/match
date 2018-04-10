@@ -26,3 +26,6 @@ Route::resource('/care', 'CareController');
 
 Route::get('/search', 'SearchController@index');
 Route::get('/search/search', 'SearchController@search');
+
+Route::get('/searchpatient', 'SearchPatientController@index');
+Route::get('/search/searchpatient', 'SearchPatientController@searchpatient');

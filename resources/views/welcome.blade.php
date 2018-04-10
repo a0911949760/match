@@ -93,6 +93,7 @@
                     <a href="{{ route('register') }}"><i class="fas fa-users"></i> 看護註冊</a>
                     <a href="{{ url('/care/create') }}"><i class="fas fa-wheelchair"></i> 申請看護</a>
                     <a href="{{ url('/search') }}"><i class="fas fa-american-sign-language-interpreting"></i> 搜尋看護</a>
+                    <a href="{{ url('/searchpatient') }}"><i class="fas fa-search"></i> 搜尋病患</a>
                 </div>
             </div>
         </div>
