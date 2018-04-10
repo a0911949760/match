@@ -76,7 +76,6 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">登入</a>
-                        
                     @endauth
                 </div>
             @endif
@@ -89,6 +88,7 @@
                 <div class="links">
                     <a href="{{ route('register') }}"><i class="fas fa-users"></i> 看護註冊</a>
                     <a href="{{ url('/care/create') }}"><i class="fas fa-wheelchair"></i> 申請看護</a>
+                    <a href="{{ url('/search') }}"><i class="fas fa-american-sign-language-interpreting"></i> 搜尋看護</a>
                 </div>
             </div>
         </div>
