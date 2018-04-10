@@ -62,14 +62,18 @@
                 margin-right: 20px;
             }
             
-
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            .content-box {
+                background: url(img/background.jpg);
+                background-size: cover;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="content-box flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
