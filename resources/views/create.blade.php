@@ -12,8 +12,8 @@
                         <font color="red">{{$error}}<br></font>
                     @endforeach
                     <input type="text" name="nama" placeholder="姓名" class="form-control" value="{{ isset($user) ? $user->name : '' }}" required> 
-                    <input type="radio" name="gender" id="genderM"  value="M" required>男性
-                    <input type="radio" name="gender" id="genderF"  value="F" >女性
+                    <input type="radio" name="gender" id="genderM"  value="1" required>男性
+                    <input type="radio" name="gender" id="genderF"  value="0" >女性
                     <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
                     <input type="date" name="birthday" class="form-control" value="{{ isset($user) ? $user->birthday :'' }}" required> 
                     <input type="phone" name="phone" placeholder="手機號碼" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>                    
@@ -49,8 +49,8 @@
                         </select>
                         <input type="text" name="address3" value="{{ isset($user) ? $user->address3 :'' }}" required>
                     </div>
-                    <input type="radio" name="license" id="licenseY"  value="Y" required>有證照
-                    <input type="radio" name="license" id="licenseN"  value="N" >無證照
+                    <input type="radio" name="license" id="licenseY"  value="1" required>有證照
+                    <input type="radio" name="license" id="licenseN"  value="0" >無證照
                     <textarea type="text" name="speciality" placeholder="專長" class="form-control" value="{{ isset($user) ? $user->speciality :'' }}" required></textarea>
                     <textarea type="text" name="experience" placeholder="經歷與學歷" class="form-control" value="{{ isset($user) ? $user->experience :'' }}" required></textarea>
                     <textarea type="text" name="selfintroduction" placeholder="自我介紹" class="form-control" value="{{ isset($user) ? $user->selfintroduction :'' }}" required></textarea>

@@ -27,12 +27,12 @@ class SearchController extends Controller
             if ($users)
             {
             foreach ($users as $key => $user){
-                if ($user->gender=="M"){
+                if ($user->gender=="1"){
                     $gender="男";
                 }else{
                     $gender="女";
                 }
-                if ($user->license=="Y"){
+                if ($user->license=="1"){
                     $license="有";
                 }else{
                     $license="無";
