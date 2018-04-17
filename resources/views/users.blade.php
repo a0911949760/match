@@ -2,6 +2,7 @@
 @section('content')
     <center>
         <h3>CRUD NEW USERS</h3>
+        <a href="{{ url('/searchpatient') }}" class="btn btn-xs btn-info"> 搜尋病患</a>
     </center>
     @if(Session::has('success'))
         <h3>{{ Session::get('success') }}</h3>
