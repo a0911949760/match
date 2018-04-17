@@ -42,7 +42,7 @@ class CareController extends Controller
     public function store(Request $request)
     {
         userscare::create($request->all());
-        return redirect()->route('care.index');       
+        return redirect()->route('care.index');     
     }
 
     /**
@@ -87,7 +87,8 @@ class CareController extends Controller
      */
     public function destroy($id)
     {
-        //
+        userscare::find($id)->delete();
+        return redirect()->route('care.index');
     }
 
     public function upload(){
