@@ -72,7 +72,24 @@
                                         </span>
                                     @endif
                                 </div>
+                            </div>                         
+
+                            <div class="form-group row">
+                                <label for="file" class="col-md-4 col-form-label text-md-right">大頭貼</label>
+
+                                <div class="col-md-6">
+                                    <form action="{{ URL::to('upload') }}" method="post" enctype="multipart/form-data">
+                                        <input id="file" type="file" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" name="file" value="{{ old('file') }}" required autofocus>
+                                        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+
+                                        @if ($errors->has('file'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('file') }}</strong>
+                                            </span>
+                                        @endif
+                                </div>
                             </div>
+                        
 
                             <div class="form-group row">
                                 <label for="speciality" class="col-md-4 col-form-label text-md-right">專長</label>
@@ -152,7 +169,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary">                                
                                     確定
                                 </button>
                             </div>

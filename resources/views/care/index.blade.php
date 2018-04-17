@@ -26,21 +26,29 @@
             <th>No</th>
             <th>姓名</th>
             <th>E-Mail</th>
+            <th>照片</th>
             <th>縣市</th>
             <th>鄉鎮</th>            
             <th>出生年月日</th>
-            <th>連絡電話</th>                        
+            <th>連絡電話</th>              
+            <th>專長</th>
+            <th>學歷</th>       
+            <th>身分證</th>                          
             <th width="280px">Action</th>
         </tr>
     @foreach ($articles as $article)
     <tr>
         <td>{{ ++$i }}</td>
-        <td>{{ $article->name}}</td>
+        <td>{{ $article->name}}</td>        
         <td>{{ $article->email}}</td>
-        <td>{{ $article->city}}</td>
+        <td>{{ $article->file}}</td>
+        <td>{{ $article->city}}</td>                
         <td>{{ $article->region}}</td>        
         <td>{{ $article->birthday}}</td>
-        <td>{{ $article->phone}}</td>        
+        <td>{{ $article->phone}}</td>          
+        <td>{{ $article->speciality}}</td>
+        <td>{{ $article->experience}}</td>
+        <td>{{ $article->identitycard}}</td>      
         
 
         <td>

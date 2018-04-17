@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Userscare extends Model
 {
     protected $fillable = [
-        'name','city','region','zipcode','birthday','phone','speciality','experience'
+        'name','city','region','zipcode','birthday','phone','file','speciality','experience'
         ,'identitycard','email','password'
     ];
 }

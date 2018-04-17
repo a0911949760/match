@@ -18,6 +18,8 @@ Route::group(['prefix' => ''],function(){
     Route::resource('users','LearnController');
 });
 
+Route::post('care', 'CareController@upload');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

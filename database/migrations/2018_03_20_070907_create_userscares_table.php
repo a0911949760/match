@@ -21,6 +21,7 @@ class CreateUserscaresTable extends Migration
             $table->string('zipcode');
             $table->string('birthday');
             $table->string('phone');
+            $table->string('file');
             $table->string('speciality');
             $table->string('experience');
             $table->string('identitycard');

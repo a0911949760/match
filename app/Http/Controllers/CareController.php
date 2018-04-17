@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\userscare;
+use \Input as Input;
 
 class CareController extends Controller
 {
@@ -41,7 +42,7 @@ class CareController extends Controller
     public function store(Request $request)
     {
         userscare::create($request->all());
-        return redirect()->route('care.index');
+        return redirect()->route('care.index');       
     }
 
     /**
@@ -87,5 +88,16 @@ class CareController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function upload(){
+        
+        if(Input::hasFile('file')){
+        
+         echo 'Uploaded';
+         $file = Input::file('file');
+         $file->move('uploads', $file->getClientOriginalName());
+         echo '';
+        }
     }
 }
