@@ -47,19 +47,9 @@ class CareController extends Controller
         $u->file=substr($path, strpos($path, '/')+1);
         $u->save();
 
-        return redirect()->route('care.index');  
-        
-        // if ($request->hasFile('image')) {
-        //     $image = $request->file('image');
-        //     $name = str_slug($request->title).'.'.$image->getClientOriginalExtension();
-        //     $destinationPath = public_path('/uploads/articles');
-        //     $imagePath = $destinationPath. "/".  $name;
-        //     $image->move($destinationPath, $name);
-        //     $article->image = $name;
-        //   }
-    }
-
-    //if($request->hasFile('profile_picture'));
+        return redirect()->route('care.index');          
+    
+    }   
 
 
     /**
@@ -108,14 +98,5 @@ class CareController extends Controller
         return redirect()->route('care.index');
     }
 
-    public function upload(){
-        
-        if(Input::hasFile('file')){
-        
-         echo 'Uploaded';
-         $file = Input::file('file');
-         $file->move('uploads', $file->getClientOriginalName());
-         echo '';
-        }
-    }
+   
 }

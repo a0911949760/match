@@ -8,7 +8,7 @@
                 <h2>被看護列表</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('care.create') }}"> Create New Article</a>
+                <a class="btn btn-success" href="{{ route('care.create') }}"> 新增成員</a>
             </div>
         </div>
     </div>
