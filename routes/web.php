@@ -18,7 +18,7 @@ Route::group(['prefix' => ''],function(){
     Route::resource('users','LearnController');
 });
 
-Route::post('care', 'CareController@upload');
+Route::post('upload', 'CareController@upload');
 
 Auth::routes();
 

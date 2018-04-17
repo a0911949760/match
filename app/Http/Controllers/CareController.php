@@ -41,9 +41,26 @@ class CareController extends Controller
      */
     public function store(Request $request)
     {
-        userscare::create($request->all());
-        return redirect()->route('care.index');     
+        $u = userscare::create($request->all());
+             
+        $path = $request->file->store('public');  
+        $u->file=substr($path, strpos($path, '/')+1);
+        $u->save();
+
+        return redirect()->route('care.index');  
+        
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $name = str_slug($request->title).'.'.$image->getClientOriginalExtension();
+        //     $destinationPath = public_path('/uploads/articles');
+        //     $imagePath = $destinationPath. "/".  $name;
+        //     $image->move($destinationPath, $name);
+        //     $article->image = $name;
+        //   }
     }
+
+    //if($request->hasFile('profile_picture'));
+
 
     /**
      * Display the specified resource.

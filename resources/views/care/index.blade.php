@@ -41,7 +41,7 @@
         <td>{{ ++$i }}</td>
         <td>{{ $article->name}}</td>        
         <td>{{ $article->email}}</td>
-        <td>{{ $article->file}}</td>
+        <td><img src="{{ asset('storage/'.$article->file) }}" height=100 /></td>
         <td>{{ $article->city}}</td>                
         <td>{{ $article->region}}</td>        
         <td>{{ $article->birthday}}</td>
