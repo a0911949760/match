@@ -93,11 +93,17 @@
                             
                                                 
 
-                            <div class="form-group row">
+                            <div class="form-group row ">
                                 <label for="speciality" class="col-md-4 col-form-label text-md-right">專長</label>
-
                                 <div class="col-md-6">
-                           
+                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓
+                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓2
+                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓3
+                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓4
+                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓5
+                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓6
+                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓7
+                                
                                     @if ($errors->has('speciality'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('speciality') }}</strong>
