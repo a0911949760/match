@@ -78,10 +78,9 @@
 
                             <div class="form-group row">
                                 <label for="phone" class="col-md-4 col-form-label text-md-right">連絡電話</label>
-
+                                
                                 <div class="col-md-6">
                                     <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
-
                                     @if ($errors->has('phone'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('phone') }}</strong>
@@ -89,20 +88,21 @@
                                     @endif
                                 </div>
                             </div>                         
-
-                            
-                                                
-
-                            <div class="form-group row ">
-                                <label for="speciality" class="col-md-4 col-form-label text-md-right">專長</label>
+                                                                       
+                            <div class="form-group row">
+                                <label for="speciality" class="col-md-4 col-form-label text-md-right" >專長</label>
+                                
                                 <div class="col-md-6">
-                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓
-                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓2
-                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓3
-                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓4
-                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓5
-                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓6
-                                <input id="speciality" type="checkbox" name="speciality"   class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" value="{{ old('speciality') }}">高血壓7
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="高血壓" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">高血壓</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="中風" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">中風</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="植物人" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">植物人</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="失智" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">失智</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="自閉症" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">自閉症</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="智能障礙" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">智能障礙</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="精神病" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">精神病</label>
+                                                                                                                                                                                                              
+
+                                                                                                                                                                                   
                                 
                                     @if ($errors->has('speciality'))
                                         <span class="invalid-feedback">
