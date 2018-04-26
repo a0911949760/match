@@ -31,7 +31,13 @@
             <th>鄉鎮</th>            
             <th>出生年月日</th>
             <th>連絡電話</th>              
-            <th>專長</th>
+            <th>高血壓</th>
+            <th>中風</th>
+            <th>植物人</th>
+            <th>失智</th>
+            <th>自閉症</th>
+            <th>智能障礙</th>
+            <th>精神病</th>            
             <th>學歷</th>       
             <th>身分證</th>                          
             <th width="280px">Action</th>
@@ -46,7 +52,13 @@
         <td>{{ $article->region}}</td>        
         <td>{{ $article->birthday}}</td>
         <td>{{ $article->phone}}</td>          
-        <td>{{ $article->speciality}}</td>
+        <td>{{ $article->高血壓 == 1 ? 'O' : '' }}</td>
+        <td>{{ $article->中風 == 1 ? 'O' : '' }}</td>
+        <td>{{ $article->植物人 == 1 ? 'O' : '' }}</td>
+        <td>{{ $article->失智 == 1 ? 'O' : '' }}</td>
+        <td>{{ $article->自閉症 == 1 ? 'O' : '' }}</td>
+        <td>{{ $article->智能障礙 == 1 ? 'O' : '' }}</td>
+        <td>{{ $article->精神病 == 1 ? 'O' : '' }}</td>
         <td>{{ $article->experience}}</td>
         <td>{{ $article->identitycard}}</td>      
         

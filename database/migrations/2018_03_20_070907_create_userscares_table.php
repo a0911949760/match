@@ -22,15 +22,21 @@ class CreateUserscaresTable extends Migration
             $table->string('birthday');
             $table->string('phone');
             $table->string('file');
-            $table->string('speciality');
+            $table->boolean('高血壓')->nullable();
+            $table->boolean('中風')->nullable();
+            $table->boolean('植物人')->nullable();
+            $table->boolean('失智')->nullable();
+            $table->boolean('自閉症')->nullable();
+            $table->boolean('智能障礙')->nullable();
+            $table->boolean('精神病')->nullable();
             $table->string('experience');
             $table->string('identitycard');
             $table->string('email');
             $table->string('password');
             $table->timestamps();
         });
-    }
-
+    }  
+    
     /**
      * Reverse the migrations.
      *
