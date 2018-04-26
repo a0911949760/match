@@ -14,6 +14,7 @@
                     <tr>
                         <th width="5">NO</th>
                         <th>姓名</th>
+                        <th>大頭貼</th>
                         <th>性別</th>
                         <th>身分證號碼</th>
                         <th>出生年月日</th>
@@ -36,6 +37,7 @@
                         <tr>
                             <td>{{ ($key+1) }}</td>
                             <td>{{ $user->name }}</td>
+                            <td><img src="{{ asset('storage/'.$user->file) }}" height=100 /></td>
                             <td>{{ $user->gender }}</td>
                             <td>{{$user->identitycard}}</td>
                             <td>{{$user->birthday}}</td>

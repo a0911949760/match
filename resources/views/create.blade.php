@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <form action="{{isset($user) ? url('users') . '/' . $user->id : url('users')}}" method="POST" name="form">
+            <form action="{{isset($user) ? url('users') . '/' . $user->id : url('users')}}" method="POST" name="form" enctype="multipart/form-data">
                 <div class="form-group">
                     {{ csrf_field() }}
                     @if(isset($user))
@@ -12,6 +12,7 @@
                         <font color="red">{{$error}}<br></font>
                     @endforeach
                     <input type="text" name="nama" placeholder="姓名" class="form-control" value="{{ isset($user) ? $user->name : '' }}" required> 
+                    <input id="file" name="file" type="file">
                     <input type="radio" name="gender" id="genderM"  value="1" required>男性
                     <input type="radio" name="gender" id="genderF"  value="0" >女性
                     <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>

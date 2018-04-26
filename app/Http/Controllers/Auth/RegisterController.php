@@ -49,6 +49,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'file' => 'required|mimes:jpeg,jpg,png|max:1000',
             'gender' => 'required|string|max:255',
             'identitycard' => 'required|string|max:255|unique:users,identitycard|regex:/^[A-Z]\d{9}$/',
             'birthday' => 'required|max:255',
@@ -73,8 +74,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $u = User::create([
             'name' => $data['name'],
+            'file' => $data['file'],
             'gender' => $data['gender'],
             'identitycard' => $data['identitycard'],
             'birthday' => $data['birthday'],
@@ -89,5 +91,9 @@ class RegisterController extends Controller
             'selfintroduction' => $data['selfintroduction'],
             'password' => bcrypt($data['password']),
         ]);
+        $path = $u->file->store('public');  
+        $u->file=substr($path, strpos($path, '/')+1);
+        $u->save();
+        return $u;
     }
 }
