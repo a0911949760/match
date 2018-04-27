@@ -26,7 +26,13 @@ class CreateUsersTable extends Migration
             $table->string('address2');
             $table->string('address3');
             $table->string('license');
-            $table->string('speciality');
+            $table->boolean('高血壓')->nullable();
+            $table->boolean('中風')->nullable();
+            $table->boolean('植物人')->nullable();
+            $table->boolean('失智')->nullable();
+            $table->boolean('自閉症')->nullable();
+            $table->boolean('智能障礙')->nullable();
+            $table->boolean('精神病')->nullable();
             $table->string('experience');
             $table->string('selfintroduction');
             $table->string('password');

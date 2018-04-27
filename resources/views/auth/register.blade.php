@@ -159,17 +159,23 @@
                         </div>
                     
                         <div class="form-group row">
-                            <label for="speciality" class="col-md-4 col-form-label text-md-right">{{ __('專長') }}</label>
-
-                            <div class="col-md-6">
-                                <textarea id="speciality" rows="5" cols="51" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}" name="speciality" value="{{ old('speciality') }}" required></textarea>
-
-                                @if ($errors->has('speciality'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('speciality') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                                <label  class="col-md-4 col-form-label text-md-right" >專長</label>
+                                <div class="col-md-6">
+                                <input  type="hidden" value="0" name="高血壓">
+                                <input  type="checkbox" value="1" name="高血壓" class="form-checkbox" >高血壓
+                                <input  type="hidden" value="0" name="中風">
+                                <input  type="checkbox" value="1" name="中風" class="form-checkbox" >中風
+                                <input  type="hidden" value="0" name="植物人">
+                                <input  type="checkbox" value="1" name="植物人" class="form-checkbox" >植物人
+                                <input  type="hidden" value="0" name="失智">
+                                <input  type="checkbox" value="1" name="失智" class="form-checkbox" >失智
+                                <input  type="hidden" value="0" name="自閉症">
+                                <input  type="checkbox" value="1" name="自閉症" class="form-checkbox" >自閉症
+                                <input  type="hidden" value="0" name="智能障礙">
+                                <input  type="checkbox" value="1" name="智能障礙" class="form-checkbox" >智能障礙
+                                <input  type="hidden" value="0" name="精神病">
+                                <input  type="checkbox" value="1" name="精神病" class="form-checkbox" >精神病
+                                </div>
                         </div>
 
                         <div class="form-group row">

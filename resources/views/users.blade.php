@@ -24,7 +24,13 @@
                         <th>Address2</th>
                         <th>Address3</th>
                         <th>證照</th>
-                        <th>專長</th>
+                        <th>高血壓</th>
+                        <th>中風</th>
+                        <th>植物人</th>
+                        <th>失智</th>
+                        <th>自閉症</th>
+                        <th>智能障礙</th>
+                        <th>精神病</th> 
                         <th>經歷與學歷</th>
                         <th>自我介紹</th>
                         <th>
@@ -46,8 +52,14 @@
                             <td>{{$user->address1}}</td>
                             <td>{{$user->address2}}</td>
                             <td>{{$user->address3}}</td>
-                            <td>{{$user->license}}</td>
-                            <td>{{$user->speciality}}</td>
+                            <td>{{$user->license}}</td>     
+                            <td>{{ $user->高血壓 == 1 ? 'O' : '' }}</td>
+                            <td>{{ $user->中風 == 1 ? 'O' : '' }}</td>
+                            <td>{{ $user->植物人 == 1 ? 'O' : '' }}</td>
+                            <td>{{ $user->失智 == 1 ? 'O' : '' }}</td>
+                            <td>{{ $user->自閉症 == 1 ? 'O' : '' }}</td>
+                            <td>{{ $user->智能障礙 == 1 ? 'O' : '' }}</td>
+                            <td>{{ $user->精神病 == 1 ? 'O' : '' }}</td>
                             <td>{{$user->experience}}</td>
                             <td>{{$user->selfintroduction}}</td>
                             <td>
