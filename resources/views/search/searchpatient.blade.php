@@ -23,10 +23,16 @@
                     <th>姓名</th>
                     <th>縣市</th>
                     <th>鄉鎮</th>
-                    <th>郵政編號</th>
                     <th>生日</th>
                     <th>手機號碼</th>
-                    <th>專長</th>
+                    <th>大頭貼</th>
+                    <th>高血壓</th>
+                    <th>中風</th>
+                    <th>植物人</th>
+                    <th>失智</th>
+                    <th>自閉症</th>
+                    <th>智能障礙</th>
+                    <th>精神病</th>
                     <th>電子信箱</th>
                 </tr>
             </thead>

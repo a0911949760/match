@@ -20,20 +20,35 @@ class SearchPatientController extends Controller
         if ($request->ajax())
         {
             $output="";
+            $image_path="http://127.0.0.1/GitHub/match/public/storage/";
             $userscares=DB::table('userscares')->where('name','LIKE','%'.$request->searchpatient.'%')
-                                     ->orWhere('speciality','LIKE','%'.$request->searchpatient.'%')->get();
+                                               ->orWhere('city','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('region','LIKE','%'.$request->searchpatient.'%')->get();
             if ($userscares)
             {
-            foreach ($userscares as $key => $userscare){                
+            foreach ($userscares as $key => $userscare){
+                if ($userscare->高血壓=="1")  {$高血壓="O";}   else{$高血壓="";}
+                if ($userscare->中風=="1")    {$中風="O";}    else{$中風="";}
+                if ($userscare->植物人=="1")  {$植物人="O";}   else{$植物人="";}
+                if ($userscare->失智=="1")    {$失智="O";}     else{$失智="";}
+                if ($userscare->自閉症=="1")  {$自閉症="O";}   else{$自閉症="";}
+                if ($userscare->智能障礙=="1"){$智能障礙="O";} else{$智能障礙="";}
+                if ($userscare->精神病=="1")  {$精神病="O";}   else{$精神病="";}
                 $output.='<tr>'.
                          '<td>'.$userscare->id.'</td>'.
                          '<td>'.$userscare->name.'</td>'.
                          '<td>'.$userscare->city.'</td>'.
                          '<td>'.$userscare->region.'</td>'.
-                         '<td>'.$userscare->zipcode.'</td>'.
                          '<td>'.$userscare->birthday.'</td>'.
                          '<td>'.$userscare->phone.'</td>'.
-                         '<td>'.$userscare->speciality.'</td>'.
+                         '<td><img src='.$image_path.$userscare->file.' height=100 width=100></td>'.
+                         '<td>'.$高血壓.'</td>'.
+                         '<td>'.$中風.'</td>'.
+                         '<td>'.$植物人.'</td>'.
+                         '<td>'.$失智.'</td>'.
+                         '<td>'.$自閉症.'</td>'.
+                         '<td>'.$智能障礙.'</td>'.
+                         '<td>'.$精神病.'</td>'.
                          '<td>'.$userscare->email.'</td>'.
                          '</tr>';
             }
