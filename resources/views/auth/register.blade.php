@@ -42,8 +42,8 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('性別') }}</label>
 
                             <div class="col-md-6">
-                                <input id="genderM" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="M" required>男性
-                                <input id="genderF" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="F" >女性
+                                <input id="genderM" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="1" required>男性
+                                <input id="genderF" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="0" >女性
                                 @if ($errors->has('gender'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('gender') }}</strong>
@@ -148,8 +148,8 @@
                             <label for="license" class="col-md-4 col-form-label text-md-right">{{ __('證照') }}</label>
 
                             <div class="col-md-6">
-                                <input id="licenseY" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="Y" required>有證照
-                                <input id="licenseN" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="N" >無證照
+                                <input id="licenseY" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="1" required>有證照
+                                <input id="licenseN" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="0" >無證照
                                 @if ($errors->has('license'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('license') }}</strong>

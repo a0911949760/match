@@ -19,8 +19,14 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
+                    <th colspan="10"></th>
+                    <th colspan="7" class="text-center">服務項目:</th>
+                    <th colspan="2"></th>
+                </tr>
+                <tr>
                     <th>id</th>
                     <th>姓名</th>
+                    <th>大頭貼</th>
                     <th>性別</th>
                     <th>手機號碼</th>
                     <th>電子信箱</th>
@@ -28,7 +34,13 @@
                     <th>鄉鎮</th>
                     <th>地區</th>
                     <th>證照</th>
-                    <th>專長</th>
+                    <th>高血壓</th>
+                    <th>中風</th>
+                    <th>植物人</th>
+                    <th>失智</th>
+                    <th>自閉症</th>
+                    <th>智能障礙</th>
+                    <th>精神病</th> 
                     <th>經歷與學歷</th>
                     <th>自我介紹</th>
                 </tr>
