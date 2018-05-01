@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('註冊表單') }}</div>
+                <div class="card-header">{{ __('註冊當看護') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" name="form" id="form" enctype="multipart/form-data">
@@ -159,22 +159,22 @@
                         </div>
                     
                         <div class="form-group row">
-                                <label  class="col-md-4 col-form-label text-md-right" >專長</label>
+                                <label  class="col-md-4 col-form-label text-md-right" >服務項目</label>
                                 <div class="col-md-6">
                                 <input  type="hidden" value="0" name="高血壓">
-                                <input  type="checkbox" value="1" name="高血壓" class="form-checkbox" >高血壓
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="高血壓" class="form-checkbox" >高血壓</label>
                                 <input  type="hidden" value="0" name="中風">
-                                <input  type="checkbox" value="1" name="中風" class="form-checkbox" >中風
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="中風" class="form-checkbox" >中風</label>
                                 <input  type="hidden" value="0" name="植物人">
-                                <input  type="checkbox" value="1" name="植物人" class="form-checkbox" >植物人
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="植物人" class="form-checkbox" >植物人</label>
                                 <input  type="hidden" value="0" name="失智">
-                                <input  type="checkbox" value="1" name="失智" class="form-checkbox" >失智
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="失智" class="form-checkbox" >失智</label>
                                 <input  type="hidden" value="0" name="自閉症">
-                                <input  type="checkbox" value="1" name="自閉症" class="form-checkbox" >自閉症
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="自閉症" class="form-checkbox" >自閉症</label>
                                 <input  type="hidden" value="0" name="智能障礙">
-                                <input  type="checkbox" value="1" name="智能障礙" class="form-checkbox" >智能障礙
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="智能障礙" class="form-checkbox" >智能障礙</label>
                                 <input  type="hidden" value="0" name="精神病">
-                                <input  type="checkbox" value="1" name="精神病" class="form-checkbox" >精神病
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="精神病" class="form-checkbox" >精神病</label>
                                 </div>
                         </div>
 

@@ -55,8 +55,8 @@ class SearchController extends Controller
                          '<td>'.$自閉症.'</td>'.
                          '<td>'.$智能障礙.'</td>'.
                          '<td>'.$精神病.'</td>'.
-                         '<td>'.$user->experience.'</td>'.
-                         '<td>'.$user->selfintroduction.'</td>'.
+                         '<td style="word-break: break-all">'.$user->experience.'</td>'.
+                         '<td style="word-break: break-all">'.$user->selfintroduction.'</td>'.
                          '</tr>';
             }
                 return Response($output);

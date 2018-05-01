@@ -149,9 +149,9 @@ class LearnController extends Controller
         $user = User::find($id);
         if($user){
             $user->destroy($id);
-            $msg = 'Delete User Success..';
+            $msg = '資料刪除成功';
         }else{
-            $msg = 'Delete User Fail.';
+            $msg = '資料刪除失敗';
         }
         return redirect()
             ->back()

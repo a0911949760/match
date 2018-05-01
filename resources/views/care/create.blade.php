@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">照護對象資料設定</div>
+                <div class="card-header">一般用戶註冊</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ url('/care') }}" enctype="multipart/form-data">
@@ -42,7 +42,7 @@
                             </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">電子信箱</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -77,7 +77,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="phone" class="col-md-4 col-form-label text-md-right">連絡電話</label>
+                                <label for="phone" class="col-md-4 col-form-label text-md-right">聯絡電話</label>
                                 
                                 <div class="col-md-6">
                                     <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
@@ -90,7 +90,7 @@
                             </div>                         
                                                                        
                             <div class="form-group row">
-                                <label for="speciality" class="col-md-4 col-form-label text-md-right" >專長</label>
+                                <label for="speciality" class="col-md-4 col-form-label text-md-right" >需照顧情況</label>
                                 
                                 <div class="col-md-6">
                                 <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="高血壓" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">高血壓</label>
@@ -100,10 +100,6 @@
                                 <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="自閉症" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">自閉症</label>
                                 <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="智能障礙" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">智能障礙</label>
                                 <label style="vertical-align:middle"><input style="vertical-align:middle" id="speciality" type="checkbox"  name="精神病" class="form-checkbox" class="form-control{{ $errors->has('speciality') ? ' is-invalid' : '' }}">精神病</label>
-                                                                                                                                                                                                              
-
-                                                                                                                                                                                   
-                                
                                     @if ($errors->has('speciality'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('speciality') }}</strong>
@@ -149,8 +145,6 @@
                                 @endif
                             </div>
                         </div>
-
-
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">密碼</label>
