@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<html><head><title>看護媒合平台</title></head>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -34,7 +34,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
+                                    重設密碼
                                 </button>
                             </div>
                         </div>
@@ -45,3 +45,4 @@
     </div>
 </div>
 @endsection
+</html>

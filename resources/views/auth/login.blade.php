@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<html><head><title>看護媒合平台</title></head>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -67,3 +67,4 @@
     </div>
 </div>
 @endsection
+</html>

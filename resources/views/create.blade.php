@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<html><head><title>看護媒合平台</title></head>
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -14,8 +15,8 @@
                     <input type="text" name="nama" placeholder="姓名" class="form-control" value="{{ isset($user) ? $user->name : '' }}" required> 
                     <input id="file" type="file" name="file" required>
                     <input type="hidden" value="{{ csrf_token() }}" name="_token">
-                    <input type="radio" name="gender" id="genderM"  value="1" required>男性
-                    <input type="radio" name="gender" id="genderF"  value="0" >女性
+                    <input type="radio" name="gender" id="genderM"  value="男" required>男性
+                    <input type="radio" name="gender" id="genderF"  value="女" >女性
                     <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
                     <input type="date" name="birthday" class="form-control" value="{{ isset($user) ? $user->birthday :'' }}" required> 
                     <input type="phone" name="phone" placeholder="手機號碼" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>                    
@@ -51,23 +52,23 @@
                         </select>
                         <input type="text" name="address3" value="{{ isset($user) ? $user->address3 :'' }}" required>
                     </div>
-                    <input type="radio" name="license" id="licenseY"  value="1" required>有證照
-                    <input type="radio" name="license" id="licenseN"  value="0" >無證照
+                    <input type="radio" name="license" id="licenseY"  value="有" required>有證照
+                    <input type="radio" name="license" id="licenseN"  value="無" >無證照
                     <br>
-                    <input  type="hidden" value="0" name="高血壓">
-                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="高血壓" class="form-checkbox" >高血壓</label>
+                    <input  type="hidden" value="0" name="行動不便">
+                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="行動不便" name="行動不便" class="form-checkbox" >行動不便</label>
                     <input  type="hidden" value="0" name="中風">
-                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="中風" class="form-checkbox" >中風</label>
+                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="中風" name="中風" class="form-checkbox" >中風</label>
                     <input  type="hidden" value="0" name="植物人">
-                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="植物人" class="form-checkbox" >植物人</label>
+                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="植物人" name="植物人" class="form-checkbox" >植物人</label>
                     <input  type="hidden" value="0" name="失智">
-                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="失智" class="form-checkbox" >失智</label>
+                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="失智" name="失智" class="form-checkbox" >失智</label>
                     <input  type="hidden" value="0" name="自閉症">
-                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="自閉症" class="form-checkbox" >自閉症</label>
+                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="自閉症" name="自閉症" class="form-checkbox" >自閉症</label>
                     <input  type="hidden" value="0" name="智能障礙">
-                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="智能障礙" class="form-checkbox" >智能障礙</label>
+                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="智能障礙" name="智能障礙" class="form-checkbox" >智能障礙</label>
                     <input  type="hidden" value="0" name="精神病">
-                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="精神病" class="form-checkbox" >精神病</label>
+                    <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="精神病" name="精神病" class="form-checkbox" >精神病</label>
                     <textarea type="text" name="experience" placeholder="經歷與學歷" class="form-control" value="{{ isset($user) ? $user->experience :'' }}" required></textarea>
                     <textarea type="text" name="selfintroduction" placeholder="自我介紹" class="form-control" value="{{ isset($user) ? $user->selfintroduction :'' }}" required></textarea>
                     <button type="submit" class="btn btn-sm btn-success">confirm</button>
@@ -478,3 +479,4 @@
         </div>
     </div>
 @endsection
+</html>

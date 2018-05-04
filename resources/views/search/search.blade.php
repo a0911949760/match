@@ -9,7 +9,7 @@
     <div class="container">
     <div class="row">
         <div class="panel panel-default">
-        <div class="panel-heading">
+        <div class="panel-heading" style="text-align:center">
             <h3>搜尋看護</h3>
         </div>
         <div class="panel-body">
@@ -19,7 +19,7 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th colspan="10"></th>
+                    <th colspan="9"></th>
                     <th colspan="7" class="text-center">服務項目:</th>
                     <th colspan="2"></th>
                 </tr>
@@ -32,9 +32,8 @@
                     <th>電子信箱</th>
                     <th>縣市</th>
                     <th>鄉鎮</th>
-                    <th>地區</th>
                     <th>證照</th>
-                    <th>高血壓</th>
+                    <th>行動不便</th>
                     <th>中風</th>
                     <th>植物人</th>
                     <th>失智</th>

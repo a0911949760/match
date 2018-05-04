@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'address2' => $data['address2'],
             'address3' => $data['address3'],
             'license' => $data['license'],
-            '高血壓' => $data['高血壓'],
+            '行動不便' => $data['行動不便'],
             '中風' => $data['中風'],
             '植物人' => $data['植物人'],
             '失智' => $data['失智'],

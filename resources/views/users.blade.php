@@ -1,9 +1,6 @@
 @extends('layouts.app')
+<html><head><title>看護媒合平台</title></head>
 @section('content')
-<head>
-<style>
-</style>
-</head>
     <center>
         <h3>看護名單</h3>
     </center>
@@ -20,7 +17,7 @@
                     <th colspan="3"></th>
                 </tr>
                     <tr>
-                        <th width="5">NO</th>
+                        <th>NO</th>
                         <th>姓名</th>
                         <th>大頭貼</th>
                         <th>性別</th>
@@ -32,7 +29,7 @@
                         <th>鄉鎮</th>
                         <th>地區</th>
                         <th>證照</th>
-                        <th>高血壓</th>
+                        <th>行動不便</th>
                         <th>中風</th>
                         <th>植物人</th>
                         <th>失智</th>
@@ -52,25 +49,25 @@
                         <tr>
                             <td>{{ ($key+1) }}</td>
                             <td>{{ $user->name }}</td>
-                            <td><img src="{{ asset('storage/'.$user->file) }}" height=100 width=100/></td>
-                            <td>{{ $user->gender == 1 ? '男' : '女' }}</td>
+                            <td height="130"><img src="{{ asset('storage/'.$user->file) }}" height=100 width=100/></td>
+                            <td>{{ $user->gender }}</td>
                             <td>{{ $user->identitycard}}</td>
                             <td>{{ $user->birthday}}</td>
-                            <td>{{ $user->phone}}</td>
+                            <td>{{ $user->phone }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->address1}}</td>
                             <td>{{ $user->address2}}</td>
                             <td>{{ $user->address3}}</td>
-                            <td>{{ $user->license == 1 ? '有' : '無'}}</td>     
-                            <td>{{ $user->高血壓 == 1 ? 'O' : '' }}</td>
-                            <td>{{ $user->中風 == 1 ? 'O' : '' }}</td>
-                            <td>{{ $user->植物人 == 1 ? 'O' : '' }}</td>
-                            <td>{{ $user->失智 == 1 ? 'O' : '' }}</td>
-                            <td>{{ $user->自閉症 == 1 ? 'O' : '' }}</td>
-                            <td>{{ $user->智能障礙 == 1 ? 'O' : '' }}</td>
-                            <td>{{ $user->精神病 == 1 ? 'O' : '' }}</td>
-                            <td>{{ $user->experience}}</td>
-                            <td>{{ $user->selfintroduction}}</td>
+                            <td>{{ $user->license}}</td>
+                            <td>{{ $user->行動不便 == "行動不便" ? 'O' : '' }}</td>
+                            <td>{{ $user->中風 == "中風" ? 'O' : '' }}</td>
+                            <td>{{ $user->植物人 == "植物人" ? 'O' : '' }}</td>
+                            <td>{{ $user->失智 == "失智" ? 'O' : '' }}</td>
+                            <td>{{ $user->自閉症 == "自閉症" ? 'O' : '' }}</td>
+                            <td>{{ $user->智能障礙 == "智能障礙" ? 'O' : '' }}</td>
+                            <td>{{ $user->精神病 == "精神病" ? 'O' : '' }}</td>
+                            <td style="word-break:break-all;">{{ $user->experience}}</td>
+                            <td style="word-break:break-all;">{{ $user->selfintroduction}}</td>
                             <td>
                                 <center>
                                     <a href="{{ URL('users/' . $user->id . '/edit') }}" class="btn btn-xs btn-info">修改</a>
@@ -88,3 +85,4 @@
         </div>
     </div>
 @endsection
+</html>

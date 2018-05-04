@@ -1,11 +1,11 @@
 @extends('layouts.app')
-
+<html><head><title>看護媒合平台</title></head>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('註冊當看護') }}</div>
+                <div class="card-header"><center>{{ __('註冊當看護') }}</center></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" name="form" id="form" enctype="multipart/form-data">
@@ -13,10 +13,8 @@
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('姓名') }}</label>
-
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -40,10 +38,9 @@
 
                         <div class="form-group row">
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('性別') }}</label>
-
                             <div class="col-md-6">
-                                <input id="genderM" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="1" required>男性
-                                <input id="genderF" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="0" >女性
+                                <input id="genderM" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="男" required>男性
+                                <input id="genderF" type="radio" class="{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="女" >女性
                                 @if ($errors->has('gender'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('gender') }}</strong>
@@ -54,10 +51,8 @@
                     
                         <div class="form-group row">
                             <label for="identitycard" class="col-md-4 col-form-label text-md-right">{{ __('身分證號碼') }}</label>
-
                             <div class="col-md-6">
                                 <input id="identitycard" type="text" class="form-control{{ $errors->has('identitycard') ? ' is-invalid' : '' }}" name="identitycard" value="{{ old('identitycard') }}" required>
-
                                 @if ($errors->has('identitycard'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('identitycard') }}</strong>
@@ -82,10 +77,8 @@
                         
                         <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('手機號碼') }}</label>
-
                             <div class="col-md-6">
                                 <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
-
                                 @if ($errors->has('phone'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('phone') }}</strong>
@@ -96,10 +89,8 @@
                         
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('電子信箱') }}</label>
-
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -110,7 +101,6 @@
                         
                         <div class="form-group row">
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('住址') }}</label>
-                            
                             <div class="col-md-6">
                                 <select name="address1" onChange="Buildkey(this.options[this.options.selectedIndex].value);" value="{{ old('address1') }}" required>
                                     <option value="">選擇縣市</option>
@@ -146,10 +136,9 @@
 
                         <div class="form-group row">
                             <label for="license" class="col-md-4 col-form-label text-md-right">{{ __('證照') }}</label>
-
                             <div class="col-md-6">
-                                <input id="licenseY" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="1" required>有證照
-                                <input id="licenseN" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="0" >無證照
+                                <input id="licenseY" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="有" required>有證照
+                                <input id="licenseN" type="radio" class="{{ $errors->has('license') ? ' is-invalid' : '' }}" name="license" value="無" >無證照
                                 @if ($errors->has('license'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('license') }}</strong>
@@ -161,29 +150,27 @@
                         <div class="form-group row">
                                 <label  class="col-md-4 col-form-label text-md-right" >服務項目</label>
                                 <div class="col-md-6">
-                                <input  type="hidden" value="0" name="高血壓">
-                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="高血壓" class="form-checkbox" >高血壓</label>
+                                <input  type="hidden" value="0" name="行動不便">
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="行動不便" name="行動不便" class="form-checkbox" >行動不便</label>
                                 <input  type="hidden" value="0" name="中風">
-                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="中風" class="form-checkbox" >中風</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="中風" name="中風" class="form-checkbox" >中風</label>
                                 <input  type="hidden" value="0" name="植物人">
-                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="植物人" class="form-checkbox" >植物人</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="植物人" name="植物人" class="form-checkbox" >植物人</label>
                                 <input  type="hidden" value="0" name="失智">
-                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="失智" class="form-checkbox" >失智</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="失智" name="失智" class="form-checkbox" >失智</label>
                                 <input  type="hidden" value="0" name="自閉症">
-                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="自閉症" class="form-checkbox" >自閉症</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="自閉症" name="自閉症" class="form-checkbox" >自閉症</label>
                                 <input  type="hidden" value="0" name="智能障礙">
-                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="智能障礙" class="form-checkbox" >智能障礙</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="智能障礙" name="智能障礙" class="form-checkbox" >智能障礙</label>
                                 <input  type="hidden" value="0" name="精神病">
-                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="1" name="精神病" class="form-checkbox" >精神病</label>
+                                <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="精神病" name="精神病" class="form-checkbox" >精神病</label>
                                 </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="experience" class="col-md-4 col-form-label text-md-right">{{ __('經歷與學歷') }}</label>
-
                             <div class="col-md-6">
                                 <textarea id="experience" rows="5" cols="51" class="form-control{{ $errors->has('experience') ? ' is-invalid' : '' }}" name="experience" value="{{ old('experience') }}" required></textarea>
-
                                 @if ($errors->has('experience'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('experience') }}</strong>
@@ -194,10 +181,8 @@
 
                         <div class="form-group row">
                             <label for="selfintroduction" class="col-md-4 col-form-label text-md-right">{{ __('自我介紹') }}</label>
-
                             <div class="col-md-6">
                                 <textarea id="selfintroduction" rows="5" cols="51" class="form-control{{ $errors->has('selfintroduction') ? ' is-invalid' : '' }}" name="selfintroduction" value="{{ old('selfintroduction') }}" required></textarea>
-
                                 @if ($errors->has('selfintroduction'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('selfintroduction') }}</strong>
@@ -208,10 +193,8 @@
                         
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -222,7 +205,6 @@
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('確認密碼') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
@@ -645,3 +627,4 @@
     </div>
 </div>
 @endsection
+</html>

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','file','gender','identitycard','phone','birthday','email','address1','address2','address3','license','高血壓','中風', '植物人', '失智', '自閉症', '智能障礙', '精神病','experience','selfintroduction','password',
+        'name','file','gender','identitycard','phone','birthday','email','address1','address2','address3','license','行動不便','中風', '植物人', '失智', '自閉症', '智能障礙', '精神病','experience','selfintroduction','password',
     ];
 
     /**

@@ -22,34 +22,43 @@ class SearchPatientController extends Controller
             $output="";
             $image_path="http://127.0.0.1/GitHub/match/public/storage/";
             $userscares=DB::table('userscares')->where('name','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('gender','LIKE','%'.$request->searchpatient.'%')
                                                ->orWhere('city','LIKE','%'.$request->searchpatient.'%')
-                                               ->orWhere('region','LIKE','%'.$request->searchpatient.'%')->get();
+                                               ->orWhere('region','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('行動不便','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('中風','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('植物人','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('失智','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('自閉症','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('智能障礙','LIKE','%'.$request->searchpatient.'%')
+                                               ->orWhere('精神病','LIKE','%'.$request->searchpatient.'%')->get();
             if ($userscares)
             {
             foreach ($userscares as $key => $userscare){
-                if ($userscare->高血壓=="1")  {$高血壓="O";}   else{$高血壓="";}
-                if ($userscare->中風=="1")    {$中風="O";}    else{$中風="";}
-                if ($userscare->植物人=="1")  {$植物人="O";}   else{$植物人="";}
-                if ($userscare->失智=="1")    {$失智="O";}     else{$失智="";}
-                if ($userscare->自閉症=="1")  {$自閉症="O";}   else{$自閉症="";}
-                if ($userscare->智能障礙=="1"){$智能障礙="O";} else{$智能障礙="";}
-                if ($userscare->精神病=="1")  {$精神病="O";}   else{$精神病="";}
+                if ($userscare->行動不便=="行動不便")  {$行動不便="O";}   else{$行動不便="";}
+                if ($userscare->中風=="中風")    {$中風="O";}    else{$中風="";}
+                if ($userscare->植物人=="植物人")  {$植物人="O";}   else{$植物人="";}
+                if ($userscare->失智=="失智")    {$失智="O";}     else{$失智="";}
+                if ($userscare->自閉症=="自閉症")  {$自閉症="O";}   else{$自閉症="";}
+                if ($userscare->智能障礙=="智能障礙"){$智能障礙="O";} else{$智能障礙="";}
+                if ($userscare->精神病=="精神病")  {$精神病="O";}   else{$精神病="";}
                 $output.='<tr>'.
                          '<td>'.$userscare->id.'</td>'.
                          '<td>'.$userscare->name.'</td>'.
-                         '<td>'.$userscare->city.'</td>'.
-                         '<td>'.$userscare->region.'</td>'.
+                         '<td><img src='.$image_path.$userscare->file.' height=100 width=100></td>'.
+                         '<td>'.$userscare->gender.'</td>'.
                          '<td>'.$userscare->birthday.'</td>'.
                          '<td>'.$userscare->phone.'</td>'.
-                         '<td><img src='.$image_path.$userscare->file.' height=100 width=100></td>'.
-                         '<td>'.$高血壓.'</td>'.
+                         '<td>'.$userscare->city.'</td>'.
+                         '<td>'.$userscare->region.'</td>'.
+                         '<td>'.$行動不便.'</td>'.
                          '<td>'.$中風.'</td>'.
                          '<td>'.$植物人.'</td>'.
                          '<td>'.$失智.'</td>'.
                          '<td>'.$自閉症.'</td>'.
                          '<td>'.$智能障礙.'</td>'.
                          '<td>'.$精神病.'</td>'.
-                         '<td>'.$userscare->email.'</td>'.
+                         '<td>'.$userscare->experience.'</td>'.
                          '</tr>';
             }
                 return Response($output);

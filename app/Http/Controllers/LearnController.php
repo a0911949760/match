@@ -100,6 +100,7 @@ class LearnController extends Controller
             $password = $request->password;
             $user = [
                 'name' => $request->nama,
+                'file' => $request->file,
                 'gender' => $request->gender,
                 'identitycard' => $request->identitycard,
                 'birthday'=>$request->birthday,
@@ -109,7 +110,13 @@ class LearnController extends Controller
                 'address2'=>$request->address2,
                 'address3'=>$request->address3,
                 'license'=>$request->license,
-                'speciality'=>$request->speciality,
+                '行動不便'=>$request->行動不便,
+                '中風'=>$request->中風,
+                '植物人'=>$request->植物人,
+                '失智'=>$request->失智,
+                '自閉症'=>$request->自閉症,
+                '智能障礙'=>$request->智能障礙,
+                '精神病'=>$request->精神病,
                 'experience'=>$request->experience,
                 'selfintroduction'=>$request->selfintroduction,
                 'password' => $password,
@@ -118,6 +125,7 @@ class LearnController extends Controller
         else{
             $user = [
                 'name' => $request->nama,
+                'file' => $request->file,
                 'gender' => $request->gender,
                 'identitycard' => $request->identitycard,
                 'birthday'=>$request->birthday,
@@ -127,11 +135,20 @@ class LearnController extends Controller
                 'address2'=>$request->address2,
                 'address3'=>$request->address3,
                 'license'=>$request->license,
-                'speciality'=>$request->speciality,
+                '行動不便'=>$request->行動不便,
+                '中風'=>$request->中風,
+                '植物人'=>$request->植物人,
+                '失智'=>$request->失智,
+                '自閉症'=>$request->自閉症,
+                '智能障礙'=>$request->智能障礙,
+                '精神病'=>$request->精神病,
                 'experience'=>$request->experience,
                 'selfintroduction'=>$request->selfintroduction,
             ]; 
-        $update = User::find($id)->update($user);
+        $update = User::find($id);
+        $path = $request->file->store('public');  
+        $update->file=substr($path, strpos($path, '/')+1);
+        $update->save();
         if($update)
             return redirect('users');
         else

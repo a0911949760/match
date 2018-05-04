@@ -41,18 +41,8 @@ class CareController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $checkboxs = ['高血壓', '中風', '植物人', '失智', '自閉症', '智能障礙', '精神病'];
-        foreach($checkboxs as $checkbox) {
-            if(isset($data[$checkbox])) {
-                $data[$checkbox] = 1;
-            }
-        }
-
-        
+        $data = $request->all();        
         $u = userscare::create($data);
-       
-             
         $path = $request->file->store('public');  
         $u->file=substr($path, strpos($path, '/')+1);
         $u->save();
