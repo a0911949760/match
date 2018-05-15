@@ -17,7 +17,7 @@
                     <input type="hidden" value="{{ csrf_token() }}" name="_token">
                     <input type="radio" name="gender" id="genderM"  value="男" required>男性
                     <input type="radio" name="gender" id="genderF"  value="女" >女性
-                    <input type="text" name="identitycard" placeholder="身分證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
+                    <input type="text" name="identitycard" placeholder="身份證號碼" class="form-control" value="{{ isset($user) ? $user->identitycard :'' }}" required>
                     <input type="date" name="birthday" class="form-control" value="{{ isset($user) ? $user->birthday :'' }}" required> 
                     <input type="phone" name="phone" placeholder="手機號碼" class="form-control" value="{{ isset($user) ? $user->phone :'' }}" required>                    
                     <input type="email" name="email" placeholder="電子信箱" class="form-control" value="{{ isset($user) ? $user->email : '' }}" required>

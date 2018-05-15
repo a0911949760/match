@@ -50,7 +50,7 @@
                         </div>
                     
                         <div class="form-group row">
-                            <label for="identitycard" class="col-md-4 col-form-label text-md-right">{{ __('身分證號碼') }}</label>
+                            <label for="identitycard" class="col-md-4 col-form-label text-md-right">{{ __('身份證號碼') }}</label>
                             <div class="col-md-6">
                                 <input id="identitycard" type="text" class="form-control{{ $errors->has('identitycard') ? ' is-invalid' : '' }}" name="identitycard" value="{{ old('identitycard') }}" required>
                                 @if ($errors->has('identitycard'))
