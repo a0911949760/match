@@ -30,7 +30,7 @@ return [
         'array'   => 'The :attribute must have between :min and :max items.',
     ],
     'boolean'              => 'The :attribute field must be true or false.',
-    'confirmed'            => '確認密碼必須跟密碼一樣',
+    'confirmed'            => ' :attribute 二次確認不一致',
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
     'different'            => 'The :attribute and :other must be different.',
@@ -116,6 +116,21 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '姓名',
+        'file' => '圖片',
+        'gender' => '性別',
+        'identitycard' => '身份證',
+        'birthday' => '出生年月日',
+        'phone' => '手機號碼',
+        'email' => '電子信箱',
+        'address1' => '縣市',
+        'address2' => '鄉鎮',
+        'address3' => '地區',
+        'license' => '證照',
+        'experience' => '經歷與學歷',
+        'selfintroduction' => '自我介紹',
+        'password' => '密碼',
+    ],
 
 ];
