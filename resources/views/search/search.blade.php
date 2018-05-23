@@ -14,7 +14,7 @@
         </div>
         <div class="panel-body">
         <div class="form-group">
-        <input type="text" class="form-control" id="search" name="search"></input>
+        <input type="text" class="form-control" id="search" name="search" placeholder="搜尋關鍵字"></input>
         </div>
         <table class="table table-bordered table-hover">
             <thead>

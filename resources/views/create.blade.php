@@ -71,7 +71,7 @@
                     <label style="vertical-align:middle"><input style="vertical-align:middle" type="checkbox" value="精神病" name="精神病" class="form-checkbox" >精神病</label>
                     <textarea type="text" name="experience" placeholder="經歷與學歷" class="form-control" value="{{ isset($user) ? $user->experience :'' }}" required></textarea>
                     <textarea type="text" name="selfintroduction" placeholder="自我介紹" class="form-control" value="{{ isset($user) ? $user->selfintroduction :'' }}" required></textarea>
-                    <button type="submit" class="btn btn-sm btn-success">confirm</button>
+                    <button type="submit" class="btn btn-sm btn-success">確定</button>
                 </div>
             </form>
             <script language="javascript">
